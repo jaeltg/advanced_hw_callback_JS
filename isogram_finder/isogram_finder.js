@@ -1,15 +1,16 @@
 const IsogramFinder = function (word) {
-    this.word = word
+    this.word = word.toLowerCase();
 }
 
 IsogramFinder.prototype.isIsogram = function () {
-    let lowerCase = this.word.toLowerCase()
-    let letters = lowerCase.split('')
-    let noDuplicates = new Set(letters)
-    return letters.every((letter) => {
-        return noDuplicates.has(letter)
-    })
-
+    const letters = this.word.split('')
+    return letters.every(letter => this.isUnique(letter));
 }
+
+IsogramFinder.prototype.isUnique = function(letter) {
+    return this.word.indexOf(letter) === this.word.lastIndexOf(letter);
+}
+
+
 
 module.exports = IsogramFinder;

@@ -5,8 +5,8 @@ const PangramFinder = function (phrase) {
 
 PangramFinder.prototype.isPangram = function () {
   let lowerCase = this.phrase.toLowerCase() 
-  let noSpaces = lowerCase.replace(/ /g, '');
-  let letters = noSpaces.split('')
+  // let noSpaces = lowerCase.replace(/ /g, '');
+  let letters = lowerCase.split('')
   // const onlyLetters = letters.filter((letter) => {
   //   letter.trim() !== ''
   // })
